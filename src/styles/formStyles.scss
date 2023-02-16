@@ -1,3 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+
+
 main {
-    color: red;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    .creditCardContainer {
+        height: 100%;
+        background-image: url('../assets/images/bg-main-desktop.png');
+        background-position: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 40%;
+    }
+
+    .formContainer {
+        display: flex;
+        height: 100%;
+        width: 60%;
+        justify-content: center;
+        align-items: center;
+        input {
+
+        }
+    }
+
+
+
+}
+@media screen and (max-width: 600px) {
+    main {
+        flex-direction: column;
+        .creditCardContainer {
+            height: 30%;
+            background-image: url('../assets/images/bg-main-desktop.png');
+            background-position: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+        }
+
+        .formContainer {
+            width: 100%;
+        }
+    }
 }

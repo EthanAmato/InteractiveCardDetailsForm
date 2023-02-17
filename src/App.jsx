@@ -2,6 +2,12 @@ import { useState } from 'react'
 import CreditCard from './components/CreditCard'
 import './styles/formStyles.scss'
 function App() {
+  function ensureSixteenDigits(e) {
+    if (e.target.value.length > 16) {
+      e.target.value = e.target.value.slice(0,16);
+    }
+  }
+
 
   return (
     <main>
@@ -15,14 +21,21 @@ function App() {
           </div>
           <div className='input full'>
             <label htmlFor="name">Card Number</label>
-            <input type="text" name='cardNumber' id='cardNumber' />
-          </div>
+            <input type="number" name='cardNumber' id='cardNumber' maxLength={16} onInput={(e)=>ensureSixteenDigits(e)}/>
+          </div> 
           <div className='input group'>
-            <label htmlFor="name">EXP. DATE (MM/YY)</label>
-            <input type="text" name='cardNumber' id='cardNumber' />
-            <input type="text" name='cardNumber' id='cardNumber' />
-            <label htmlFor="name">CVC</label>
-            <input type="text" name='cardNumber' id='cardNumber' />
+            <div>
+              <label htmlFor="name">EXP. DATE (MM/YY)</label><br />
+              <input type="text" name='cardNumber' id='cardNumber' />
+              <input type="text" name='cardNumber' id='cardNumber' />
+            </div>
+            <div>
+              <label htmlFor="name">CVC</label><br />
+              <input type="text" name='cardNumber' id='cardNumber' />
+            </div>
+          </div>
+          <div className='input full'>
+            <button type='submit'>Confirm</button>
           </div>
         </form>
         {/* <!-- Completed state start -->

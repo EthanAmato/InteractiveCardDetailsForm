@@ -1,133 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 
-.creditCardWrapper {
-    font-family: 'Space Grotesk', sans-serif;
-    position: absolute;
+.creditCardContainer {
     height: 100%;
-    color: white;
-    left: 18%;
+    background-image: url('../assets/images/bg-main-desktop.png');
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40%;
 
-
-    p {
-        margin: 0;
-    }
-
-    .frontSide,
-    .backSide {
+    .creditCardWrapper {
+        font-family: 'Space Grotesk', sans-serif;
         position: absolute;
-        width: 447px;
-        height: 245px;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .frontSide {
-        background-image: url('../assets/images/bg-card-front.png');
-        top: 20%;
-
-        div.shapes {
-            width: 100%;
-            height: 3em;
-            position: absolute;
-            display: flex;
-            align-items: center;
-            top: 1.5em;
-            left: 2em;
-
-            .circle-1 {
-                display: inline-block;
-                height: 100%;
-                width: 3em;
-                border-radius: 50%;
-                background-color: white;
-            }
-
-            .circle-2 {
-                display: inline-block;
-                height: 40%;
-                width: calc(3em * .4);
-                margin-left: 1em;
-                border-radius: 50%;
-                border: solid 1px white;
-            }
-        }
+        width: 100%;
+        color: white;
+        left: 18%;
+        top: 15em;
 
         p {
-            position: absolute;
+            margin: 0;
         }
 
-        p.cardNumber {
-            text-align: center;
-            top: 4.5em;
-            width: 100%;
-            letter-spacing: 1.5px;
-            font-size: 2em;
-        }
-
-        p.name {
-            top: 12.5em;
-            left: 2em;
-            width: 100%;
-            letter-spacing: 1.5px;
-            font-size: 1em;
-        }
-
-        p.expirationDate {
-            right: 1.5em;
-            top: 12.5em;
-
-
-        }
-    }
-
-    .backSide {
-        background-image: url('../assets/images/bg-card-back.png');
-        position: absolute;
-        top: calc(20% + 18em);
-        left: 5em;
-
-        p.securityCode {
-            position: absolute;
-            top: 4.3em;
-            right: 2em;
-            letter-spacing: 1.5px;
-            font-size: 1.5em;
-        }
-    }
-
-
-}
-
-@media screen and (max-width: 600px) {
-    .creditCardWrapper {
-        width: fit-content;
-        position: absolute;
-        left: 1em;
-        top: 8%;
         .frontSide,
         .backSide {
-            width: calc(447px * .7);
-            height: calc(245px * .7);
-            border-radius: 1em;
+            position: absolute;
+            width: 447px;
+            height: 245px;
             background-position: center;
             background-repeat: no-repeat;
         }
 
-
         .frontSide {
-            position: absolute;
-            top: 5em;
-            z-index: 5;
+            background-image: url('../assets/images/bg-card-front.png');
+            top: 20%;
+
+            div.shapes {
+                width: 100%;
+                height: 3em;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                top: 1.5em;
+                left: 2em;
+
+                .circle-1 {
+                    display: inline-block;
+                    height: 100%;
+                    width: 3em;
+                    border-radius: 50%;
+                    background-color: white;
+                }
+
+                .circle-2 {
+                    display: inline-block;
+                    height: 40%;
+                    width: calc(3em * .4);
+                    margin-left: 1em;
+                    border-radius: 50%;
+                    border: solid 1px white;
+                }
+            }
+
+            p {
+                position: absolute;
+            }
+
             p.cardNumber {
                 text-align: center;
-                top: 5em;
+                top: 4.5em;
                 width: 100%;
                 letter-spacing: 1.5px;
-                font-size: 1.25em;
+                font-size: 2em;
             }
 
             p.name {
-                top: 8.5em;
+                top: 12.5em;
                 left: 2em;
                 width: 100%;
                 letter-spacing: 1.5px;
@@ -136,22 +82,96 @@
 
             p.expirationDate {
                 right: 1.5em;
-                top: 8.5em;
+                top: 12.5em;
 
 
             }
         }
 
         .backSide {
-            top: 0;
-            left: 3em;
+            background-image: url('../assets/images/bg-card-back.png');
+            position: absolute;
+            top: calc(20% + 18em);
+            left: 5em;
 
             p.securityCode {
                 position: absolute;
-                top: 4.5em;
-                right: 1em;
+                top: 4.3em;
+                right: 2em;
                 letter-spacing: 1.5px;
-                font-size: 1em;
+                font-size: 1.5em;
+            }
+        }
+
+
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .creditCardContainer {
+        height: 30em;
+        background-image: url('../assets/images/bg-main-mobile.png');
+
+        width: 100%;
+
+        .creditCardWrapper {
+            width: 350px;
+            height: inherit;
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: 8em;
+            .frontSide,
+            .backSide {
+                width: calc(447px * .7);
+                height: calc(245px * .7);
+                border-radius: 1em;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+
+            .frontSide {
+                position: absolute;
+                top: 5em;
+                z-index: 5;
+
+                p.cardNumber {
+                    text-align: center;
+                    top: 5em;
+                    width: 100%;
+                    letter-spacing: 1.5px;
+                    font-size: 1.25em;
+                }
+
+                p.name {
+                    top: 8.5em;
+                    left: 2em;
+                    width: 100%;
+                    letter-spacing: 1.5px;
+                    font-size: 1em;
+                }
+
+                p.expirationDate {
+                    right: 1.5em;
+                    top: 8.5em;
+
+
+                }
+            }
+
+            .backSide {
+                top: 0;
+                left: 3em;
+
+                p.securityCode {
+                    position: absolute;
+                    top: 4.5em;
+                    right: 1em;
+                    letter-spacing: 1.5px;
+                    font-size: 1em;
+                }
             }
         }
     }

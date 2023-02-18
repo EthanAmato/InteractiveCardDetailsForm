@@ -43,6 +43,9 @@ main {
             height: 100%;
             width: 40%;
             margin: 0 10% 0 auto;
+            .error {
+                color: rgb(222, 0, 0);
+            }
             label {
                 margin-bottom: 1em;
             }

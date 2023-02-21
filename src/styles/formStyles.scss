@@ -8,7 +8,8 @@ html, body {
 body {
     min-height: 100vh;
     font-family: 'Space Grotesk', sans-serif;
-
+    width: 100%;
+    overflow-x: hidden;
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -26,7 +27,6 @@ main {
     width: 100%;
     height: 100vh;
     display: flex;
-   
 
     .formContainer {
         position: relative;
@@ -35,7 +35,7 @@ main {
         height: 100%;
         width: 100%;
         margin: auto 0;
-        form {
+        form, .thankYou {
             display: flex;
             gap: 1.5em;
             flex-direction: column;
@@ -76,7 +76,7 @@ main {
                     input {
                         margin-top: 1em;
                         display: inline-block;
-                        width: 8em;
+                        width: 6em;
                     }
                 }
                 div:nth-child(2) {
@@ -96,13 +96,16 @@ main {
 
         .formContainer {
             width: 100%;
-            form {
+            form, .thankYou {
                 width: 80%;
                 margin: 0 auto;
                 div:not(.group) {
                     display: flex;
                     flex-direction: column;
                 }
+            }
+            .thankYou {
+                text-align: center;
             }
         }
     }

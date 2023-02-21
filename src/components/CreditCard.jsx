@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import '../styles/creditCardStyles.scss'
 
-function CreditCard({ cardNumber, cardSecurityCode }) {
+function CreditCard({ cardNumber, cardSecurityCode, name, expMonth, expYear }) {
     const [parsedCardNumber, setParsedCardNumber] = useState("0000 0000 0000 0000")
     const [parsedCVC, setParsedCVC] = useState("000")
 
@@ -56,8 +56,8 @@ function CreditCard({ cardNumber, cardSecurityCode }) {
                         <div className='circle-2'></div>
                     </div>
                     <p className='cardNumber'>{parsedCardNumber||templateString}</p>
-                    <p className='name'>Jane Appleseed</p>
-                    <p className='expirationDate'>00/00</p>
+                    <p className='name'>{name||"Jane Appleseed"}</p>
+                    <p className='expirationDate'>{(expMonth||"00") + "/" + (expYear||"00")}</p>
                 </div>
                 <div className="backSide">
                     <p className='securityCode'>{parsedCVC}</p>

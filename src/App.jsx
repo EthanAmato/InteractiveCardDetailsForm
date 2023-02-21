@@ -4,7 +4,9 @@ import './styles/formStyles.scss'
 function App() {
   const [error, setError] = useState(false);
 
+  const [name, setName] = useState();
   const [cardNumber, setCardNumber] = useState();
+  const [securityCode, setSecurityCode] = useState();
 
   const nameRef = useRef();
   const numberRef = useRef();
@@ -41,7 +43,7 @@ function App() {
 
   return (
     <main>
-      <CreditCard cardNumber={cardNumber} />
+      <CreditCard cardNumber={cardNumber} cardSecurityCode={securityCode} />
       <div className='formContainer'>
         <form onSubmit={handleSubmit}>
 
@@ -71,8 +73,15 @@ function App() {
             </div>
             <div>
               <label htmlFor="cvc">CVC</label><br />
-              <input type="number" name='cvc' id='cvc' onInput={(e) => ensureNumDigits(e, 3) } ref={codeRef}/><br />
-              {error && <label className='error'>Must Fill Out CVC</label>}
+              <input type="number" 
+                    name='cvc' 
+                    id='cvc' 
+                    onInput={(e) => ensureNumDigits(e, 3) } 
+                    onChange={(e)=> setSecurityCode(() => e.target.value)} 
+
+                    ref={codeRef}
+              /><br/>
+            {error && <label className='error'>Must Fill Out CVC</label>}
             </div>
           </div>
           <div className='input full'>
